@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ink: #141414;
+  --color-mute: #77756f;
+  --font-sans: 'Inter Tight', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+html { -webkit-tap-highlight-color: transparent; }
+body { @apply bg-[#ecebe7] font-sans text-ink antialiased; overscroll-behavior: none; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 3px; }
+.mono { font-family: var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; }
