@@ -144,7 +144,8 @@ export default function App() {
                 }}
                 className={`relative h-full ${d === 0 && !open ? 'cursor-zoom-in' : open ? 'cursor-default' : ''}`}
               >
-                <span className="absolute inset-x-[12%] -bottom-[3%] h-[7%] rounded-[50%] bg-black/25 blur-xl" aria-hidden="true" />
+                <motion.span className="absolute inset-x-[12%] -bottom-[3%] h-[7%] rounded-[50%] bg-black/25 blur-xl" aria-hidden="true" animate={{ scaleX: [1, 0.86, 1], opacity: [1, 0.7, 1] }} transition={{ duration: 4.2 + k * 0.35, repeat: Infinity, ease: 'easeInOut', delay: k * 0.4 }} />
+                <motion.span className="relative flex h-full items-end" animate={{ y: [0, -14, 0] }} transition={{ duration: 4.2 + k * 0.35, repeat: Infinity, ease: 'easeInOut', delay: k * 0.4 }}>
                 <AnimatePresence mode="popLayout" initial={false}>
                   <motion.img
                     key={variants[q.id]}
@@ -158,6 +159,7 @@ export default function App() {
                     className="relative h-full w-auto max-w-[80vw] select-none object-contain object-bottom md:max-w-[36vw]"
                   />
                 </AnimatePresence>
+                </motion.span>
               </button>
             </motion.div>
           )
@@ -227,7 +229,6 @@ export default function App() {
                 </motion.li>
               ))}
             </ol>
-            <p className="mt-8 text-[12px] text-white/45">Doudounes et parkas pour tes voyages et les nuits fraîches · Livraison 24 h à Dakar. Marque fictive, site de démonstration WebBeez.</p>
           </motion.div>
         )}
       </AnimatePresence>
